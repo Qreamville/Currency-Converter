@@ -7,8 +7,9 @@ const Converter = () => {
   const [chooseSecondary, setChooseSecondary] = useState("AED");
   const [amount, setAmount] = useState("1");
   const [result, setResult] = useState("0");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState("YYYY-MM-DD");
 
+  // currency option mapping
   const currency = currencies.map((item, _index) => {
     return (
       <option value={item} key={_index}>
@@ -17,6 +18,7 @@ const Converter = () => {
     );
   });
 
+  // api fetching
   const handleConvert = (e) => {
     e.preventDefault();
     var myHeaders = new Headers();
@@ -33,7 +35,10 @@ const Converter = () => {
       requestOptions
     )
       .then((response) => response.text())
-      .then((result) => setResult(JSON.parse(result)["result"]))
+      .then((result) => {
+        setResult(JSON.parse(result)["result"]);
+        setDate(JSON.parse(result)["date"]);
+      })
       .catch((error) => console.log("error", error));
   };
 
