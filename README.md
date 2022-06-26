@@ -3,7 +3,7 @@
 A currency converter used to convert diffrent currency to another. Built using exchange rates api.
 
 
-## Live link: [Mathwhiz website](https://qreamville.github.io/Mathwhiz/)
+## Live link: [Currency Conveter website](https://qreamville.github.io/Currency-Converter/)
 
 ### Built with
 
